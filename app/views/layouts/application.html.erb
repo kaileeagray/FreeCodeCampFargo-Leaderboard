@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FreeCodeCampFargoLeaderboard</title>
-    <%= csrf_meta_tags %>
-
+    <title>Fargo Leaderboard | Free Code Camp</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%=link_to "Free Code Camp", "https://www.freecodecamp.com/", id: "logo", target: "_blank"%>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Join The Fargo Campsite", "https://www.facebook.com/groups/free.code.camp.fargo/", target: "_blank"%></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
